@@ -17,6 +17,9 @@ export default defineConfig({
   server: {
     port: 4204,
   },
+  preview: {
+    port: 4204,
+  },
   build: {
     target: 'esnext',
     minify: false,

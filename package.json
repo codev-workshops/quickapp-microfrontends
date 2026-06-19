@@ -16,9 +16,17 @@
     "build:customer": "cd apps/customer-mfe && npm run build",
     "build:order": "cd apps/order-mfe && npm run build",
     "build:product": "cd apps/product-mfe && npm run build",
-    "test:all": "concurrently \"cd apps/shell && npx vitest run\" \"cd apps/identity-mfe && npx vitest run\" \"cd apps/customer-mfe && npx vitest run\" \"cd apps/order-mfe && npx vitest run\" \"cd apps/product-mfe && npx vitest run\""
+    "test:all": "concurrently \"cd apps/shell && npx vitest run\" \"cd apps/identity-mfe && npx vitest run\" \"cd apps/customer-mfe && npx vitest run\" \"cd apps/order-mfe && npx vitest run\" \"cd apps/product-mfe && npx vitest run\"",
+    "preview:all": "concurrently \"npm run preview:shell\" \"npm run preview:identity\" \"npm run preview:customer\" \"npm run preview:order\" \"npm run preview:product\"",
+    "preview:shell": "cd apps/shell && npm run preview",
+    "preview:identity": "cd apps/identity-mfe && npm run preview",
+    "preview:customer": "cd apps/customer-mfe && npm run preview",
+    "preview:order": "cd apps/order-mfe && npm run preview",
+    "preview:product": "cd apps/product-mfe && npm run preview",
+    "test:e2e": "cd e2e && npx playwright test"
   },
   "devDependencies": {
+    "@playwright/test": "^1.61.0",
     "concurrently": "^9.0.0"
   }
 }

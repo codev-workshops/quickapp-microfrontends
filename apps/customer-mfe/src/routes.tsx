@@ -14,3 +14,5 @@ export const remoteRoutes: RouteObject[] = [
     element: <React.Suspense fallback={<p>Loading...</p>}><CustomerDetailPage /></React.Suspense>,
   },
 ];
+
+export default remoteRoutes;
