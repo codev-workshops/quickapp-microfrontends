@@ -5,5 +5,5 @@
     "rootDir": "./src"
   },
   "include": ["src/**/*"],
-  "exclude": ["src/app/**/*"]
+  "exclude": ["src/app/**/*", "src/**/__tests__/**/*", "src/**/*.test.*"]
 }
