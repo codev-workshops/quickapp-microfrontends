@@ -1,9 +1,8 @@
 {
   "extends": "../../tsconfig.base.json",
   "compilerOptions": {
-    "outDir": "./dist",
-    "rootDir": "./src"
+    "noEmit": true
   },
   "include": ["src/**/*"],
-  "exclude": ["src/app/**/*"]
+  "exclude": ["src/app/**/*", "src/**/__tests__/**", "src/**/*.test.*", "src/__mocks__/**"]
 }

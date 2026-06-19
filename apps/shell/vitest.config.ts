@@ -10,6 +10,10 @@ export default defineConfig({
   resolve: {
     alias: {
       '@decomposition/shared': path.resolve(__dirname, '../../libs/shared/src/index.ts'),
+      'identityMfe/routes': path.resolve(__dirname, 'src/__mocks__/remoteRoutes.tsx'),
+      'customerMfe/routes': path.resolve(__dirname, 'src/__mocks__/remoteRoutes.tsx'),
+      'orderMfe/routes': path.resolve(__dirname, 'src/__mocks__/remoteRoutes.tsx'),
+      'productMfe/routes': path.resolve(__dirname, 'src/__mocks__/remoteRoutes.tsx'),
     },
   },
 });
