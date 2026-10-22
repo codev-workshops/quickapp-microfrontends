@@ -1,0 +1,29 @@
+# https://docs.devin.ai/onboard-devin/environment-yaml
+# Angular 21 micro-frontends (Module Federation). Commands run from repo root.
+# One-time setup (e.g., install system tools, global CLIs).
+initialize: |
+  nvm install 22 && nvm alias default 22
+# Install project dependencies (runs during builds, surfaced to agent at session start).
+maintenance: |
+  npm install
+  (cd libs/shared && npm install)
+knowledge:
+  - name: build
+    contents: |
+      # Intended: npm run build:all  (per-app: npm run build:shell, build:identity, ...)
+      # NOT functional yet: apps/* have no package.json/angular.json, so build:all fails.
+  - name: start
+    contents: |
+      # Intended: npm run start:all  (shell:4200, identity:4201, customer:4202, order:4203, product:4204)
+      # NOT functional yet: apps/* have no package.json, so start:all/start:shell fail.
+  - name: test
+    contents: |
+      # No test runner configured in the repo yet.
+  - name: lint
+    contents: |
+      # No lint/format config in the repo yet.
+  - name: notes
+    contents: |
+      Repo is target-state scaffolding: apps/{shell,identity-mfe,customer-mfe,order-mfe,product-mfe}
+      contain only Dockerfile/nginx.conf/webpack.config.js/*.ts stubs (no package.json/angular.json/tsconfig).
+      Each app's Dockerfile expects a package.json + `npm run build` that don't exist yet.
